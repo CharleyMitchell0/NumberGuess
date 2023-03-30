@@ -22,7 +22,15 @@ public class Number {
 
         if (guessOne == randomNumber) {
             System.out.println("You guessed it!");
-            System.out.println("It took you " + tryCount + " tries!");
+            if (tryCount == 1) {
+                System.out.println("You guessed it first time! Lucky you!");
+            } 
+            else if (tryCount <= 5) {
+                System.out.println("It took you " + tryCount + " guesses. That is acceptable.");
+            } 
+            else {
+                System.out.println("It took you " + tryCount + " guesses. You should do better.");
+            }
             break;
         }     
           else if (guessOne < randomNumber) {
@@ -31,7 +39,7 @@ public class Number {
         else {
             System.out.println("Too high! Guess again!");
         }
-        scanner.close(); // to solve resourse leak problem with scanner
+        // scanner.close(); // to solve resourse leak problem with scanner
     }
     }
 }
