@@ -7,12 +7,18 @@ public class Number {
         
         Random  rand = new Random(); // generate random number 
 
-        int randomNumber = rand.nextInt(100) + 1; 
+        
 
         Scanner scanner = new Scanner(System.in); //Creates Scanner object
         int tryCount = 0;
         
-        System.out.println("Welcome to the game! \nI am thinking of a number between 1 and 100. \nPlease enter your guess here: ");
+        System.out.println("Welcome to the game!  \nPlease pick a number to choose your difficulty.");
+
+        int chosenRange = scanner.nextInt(); // user chooses range 
+
+        int randomNumber = rand.nextInt(chosenRange) + 1; 
+
+        System.out.println("OK... I am now thinking of a number between 1 and " + chosenRange + ". Please now enter your guess.");
 
         while(true){
         int guessOne = scanner.nextInt(); // Read user input
@@ -25,7 +31,7 @@ public class Number {
             if (tryCount == 1) {
                 System.out.println("You guessed it first time! Lucky you!");
             } 
-            else if (tryCount <= 5) {
+            else if (tryCount <= 10) {
                 System.out.println("It took you " + tryCount + " guesses. That is acceptable.");
             } 
             else {
@@ -39,7 +45,7 @@ public class Number {
         else {
             System.out.println("Too high! Guess again!");
         }
-        // scanner.close(); // to solve resourse leak problem with scanner
+        // scanner.close(); // to solve resourse leak problem with scanner - need to investigate further. 
     }
     }
 }
