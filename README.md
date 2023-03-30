@@ -1,5 +1,7 @@
-# NumberGuess
+# Number Guessing Game
 
 This is my first **Java** project!
 
-Hoping to improve it as I go
+You have to guess the randomised number between 1 & 100
+
+Hoping to improve it as I go.
